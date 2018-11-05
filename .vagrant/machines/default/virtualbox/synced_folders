@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/olivierlemaitre/developpement/python/tp1","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/vagrant":{"mount_options":["dmode=777","fmode=666","uid=500","gid=500"],"guestpath":"/vagrant","hostpath":"/Users/olivierlemaitre/developpement/python/tp1","disabled":false,"__vagrantfile":true}}}
