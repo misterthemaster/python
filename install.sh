@@ -33,3 +33,5 @@ sudo service mysqld restart
 
 # set to autostart
 sudo chkconfig mysqld on
+
+ mysql -u root -ppassword -e < "/home/vagrant/client_DATA.sql"
