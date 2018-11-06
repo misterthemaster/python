@@ -10,3 +10,6 @@ class FileExtract:
     def readSource(self):
         for line in self.__fichier:
             print (line)
+
+    def close(self):
+        print("à fermer")
