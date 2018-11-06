@@ -1,4 +1,3 @@
-import pymysql.cursors
 from mod_sql import Sql
 
 class SqlExtract(Sql):
