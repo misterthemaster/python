@@ -2,9 +2,10 @@ import json
 
 class JsonExtract:
 
-    def __init__(self,fileName):
+    def __init__(self,fileName, objDest):
         self.fileName = fileName;
         self.__fichier = ""
+        self.objDest = objDest
 
     def open(self):
         with open(self.fileName) as json_data:
@@ -19,6 +20,7 @@ class JsonExtract:
             if 'gender' in line:
                 gender = line["gender"].replace("Male","M").replace("Female","F")
 
+            self.objDest.insertDestination(line["first_name"], line["last_name"], line["email"], gender,line["ville"])
             print(line["first_name"] + " " + line["last_name"] + " " + line["email"] + " " +
                   gender + " " + line["ville"])
 

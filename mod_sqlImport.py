@@ -11,18 +11,16 @@ class SqlImport(Sql):
             sql = "DROP TABLE IF EXISTS etlDestination"
             cursor.execute(sql)
 
-            sql = """CREATE TABLE etlDestination(
-                        id integer primary key autoincrement unique,
-                        first_name VARCHAR(30),
-                        last_name VARCHAR(30),
-                        email VARCHAR(30), 
-                        gender VARCHAR(30), 
-                        city VARCHAR(30)
-                    ) """
+            sql = """CREATE TABLE etlDestination (
+                       ID int NOT NULL AUTO_INCREMENT,
+                       first_name VARCHAR(30),
+                       last_name VARCHAR(30),
+                       email VARCHAR(30), 
+                       gender VARCHAR(30), 
+                       city VARCHAR(30),
+                       PRIMARY KEY (ID)
+                    ); """
             cursor.execute(sql)
-
-
-
 
     def insertDestination(self,first_name, last_name, email, gender, city):
         with self.conn.cursor() as cursor:
