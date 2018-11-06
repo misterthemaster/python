@@ -15,7 +15,7 @@ if __name__ == '__main__':
         objList = [obj_file,obj_json,obj_sql]
         for obj in objList:
             obj.open()
-            obj.readSource()
+            obj.readAndExtract()
             obj.close()
 
 main()

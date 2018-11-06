@@ -34,8 +34,10 @@ sudo service mysqld restart
 # set to autostart
 sudo chkconfig mysqld on
 
-echo "Creating db"
+echo "Creating db source"
 mysql -u root -ppassword -e "create database if not exists dbClient;"
+echo "Creating db ETL"
+mysql -u root -ppassword -e "create database if not exists dbEtl;"
 echo "SQL script"
 mysql -u root -ppassword dbClient < /vagrant/sources/client_DATA.sql
 
