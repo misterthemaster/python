@@ -5,15 +5,15 @@ from mod_sqlImport import SqlImport
 
 if __name__ == '__main__':
     def main():
-        obj_createTable = SqlImport('10.19.17.12','root','password','dbEtl')
+        obj_sqlDestination = SqlImport('10.19.17.12','root','password','dbEtl')
 
         #Create destination table
-        obj_createTable.open()
-        obj_createTable.recreateTableDestination()
+        obj_sqlDestination.open()
+        obj_sqlDestination.recreateTableDestination()
 
-        obj_file = FileExtract("sources/week_cust.csv", obj_createTable)
-        obj_json = JsonExtract("sources/cust_data.json", obj_createTable)
-        obj_sql = SqlExtract('10.19.17.12','root','password','dbClient', obj_createTable)
+        obj_file = FileExtract("sources/week_cust.csv", obj_sqlDestination)
+        obj_json = JsonExtract("sources/cust_data.json", obj_sqlDestination)
+        obj_sql = SqlExtract('10.19.17.12','root','password','dbClient', obj_sqlDestination)
 
         objList = [obj_file,obj_json,obj_sql]
         for obj in objList:
@@ -21,7 +21,7 @@ if __name__ == '__main__':
             obj.readAndExtract()
             obj.close()
 
-        obj_createTable.close()
+            obj_sqlDestination.close()
 
 
 main()
