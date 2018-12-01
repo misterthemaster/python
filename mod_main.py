@@ -15,13 +15,13 @@ if __name__ == '__main__':
         obj_json = JsonExtract("sources/cust_data.json", obj_sqlDestination)
         obj_sql = SqlExtract('10.19.17.12','root','password','dbClient', obj_sqlDestination)
 
-        objList = [obj_file,obj_json,obj_sql]
+        objList = [obj_sql,obj_file,obj_json]
         for obj in objList:
             obj.open()
             obj.readAndExtract()
             obj.close()
 
-            obj_sqlDestination.close()
+        obj_sqlDestination.close()
 
 
 main()

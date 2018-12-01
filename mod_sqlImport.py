@@ -13,11 +13,11 @@ class SqlImport(Sql):
 
             sql = """CREATE TABLE etlDestination (
                        ID int NOT NULL AUTO_INCREMENT,
-                       first_name VARCHAR(30),
-                       last_name VARCHAR(30),
-                       email VARCHAR(30), 
+                       first_name VARCHAR(50),
+                       last_name VARCHAR(50),
+                       email VARCHAR(50), 
                        gender VARCHAR(30), 
-                       city VARCHAR(30),
+                       city VARCHAR(50),
                        PRIMARY KEY (ID)
                     ); """
             cursor.execute(sql)
